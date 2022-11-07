@@ -11,4 +11,7 @@ from .base import BaseAPI
 
 
 class SalesAPI(BaseAPI):
-    ...
+    def recent_taker_orders_grouped_by_txn_hash(self, **params):
+        endpoint = "/v2/sales/recent-taker-orders"
+
+        return self.request(endpoint, params=params)
