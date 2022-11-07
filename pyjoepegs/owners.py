@@ -11,4 +11,12 @@ from .base import BaseAPI
 
 
 class OwnersAPI(BaseAPI):
-    ...
+    def list_owners(self, **params):
+        endpoint = "/v2/owners"
+
+        return self.request(endpoint, params=params)
+
+    def list_collection_owners(self, collection_id, **params):
+        endpoint = f"/v2/owners/collections/{collection_id}"
+
+        return self.request(endpoint, params=params)
