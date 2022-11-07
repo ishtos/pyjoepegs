@@ -11,4 +11,7 @@ from .base import BaseAPI
 
 
 class ItemsAPI(BaseAPI):
-    ...
+    def list_items(self, **params):
+        endpoint = "/v2/items"
+
+        return self.request(endpoint, params=params)
