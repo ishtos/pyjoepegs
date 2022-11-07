@@ -11,4 +11,7 @@ from .base import BaseAPI
 
 
 class SearchAPI(BaseAPI):
-    ...
+    def search(self, **params):
+        endpoint = "/v2/search"
+
+        return self.request(endpoint, params=params)
