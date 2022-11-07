@@ -11,4 +11,12 @@ from .base import BaseAPI
 
 
 class MakerOrdersAPI(BaseAPI):
-    ...
+    def list_maker_orders(self, **params):
+        endpoint = "/v2/maker-orders"
+
+        return self.request(endpoint, params=params)
+
+    def get_maker_order(self, order_id, **params):
+        endpoint = f"/v2/maker-orders/{order_id}"
+
+        return self.request(endpoint, params=params)
