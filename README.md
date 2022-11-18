@@ -1,6 +1,6 @@
 # pyjoepegs
 
-python [joepegs](https://joepegs.dev/api) api client
+python api client for [joepegs](https://joepegs.dev/api)
 
 ## Install
 
