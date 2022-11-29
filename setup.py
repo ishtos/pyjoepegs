@@ -4,7 +4,7 @@ requires = ["requests"]
 
 setup(
     name="",
-    version="0.0.2",
+    version="0.0.3",
     url="https://github.com/ishtos/pyjoepegs",
     description="client library for joepegs api",
     author="ishtos",
