@@ -26,4 +26,5 @@ class TestActivitiesAPI(unittest.TestCase):
     def test_recent_taker_orders_grouped_by_txn_hash(self) -> None:
         response = self.api.recent_taker_orders_grouped_by_txn_hash()
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, list)
+        self.assertIsInstance(response[0], dict)

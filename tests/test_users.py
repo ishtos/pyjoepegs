@@ -28,40 +28,40 @@ class TestActivitiesAPI(unittest.TestCase):
         name = "ishtos"
         response = self.api.get_user_by_name(name)
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, dict)
 
     def test_get_user(self) -> None:
         address = "0xb842344669579ecf4cee12f740520376c4cbc6d1"
         response = self.api.get_user(address)
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, dict)
 
     def test_get_user_collections(self) -> None:
         address = "0xb842344669579ecf4cee12f740520376c4cbc6d1"
         response = self.api.get_user_collections(address)
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, list)
 
     def test_get_user_items(self) -> None:
         address = "0xb842344669579ecf4cee12f740520376c4cbc6d1"
         response = self.api.get_user_items(address)
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, list)
 
     def test_get_user_items_on_auction(self) -> None:
         address = "0xb842344669579ecf4cee12f740520376c4cbc6d1"
         response = self.api.get_user_items_on_auction(address)
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, list)
 
     def test_get_user_bids_received(self) -> None:
         address = "0xb842344669579ecf4cee12f740520376c4cbc6d1"
         response = self.api.get_user_bids_received(address)
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, list)
 
     def test_get_user_activity(self) -> None:
         address = "0xb842344669579ecf4cee12f740520376c4cbc6d1"
         response = self.api.get_user_activity(address)
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, list)

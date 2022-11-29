@@ -16,7 +16,7 @@ from .search import SearchAPI
 from .users import UsersAPI
 
 
-class API:
+class JoepegsAPI:
     def __init__(self, api_key, timeout=None):
         self.api_key = api_key
         self.timeout = timeout

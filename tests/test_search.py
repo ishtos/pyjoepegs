@@ -26,4 +26,4 @@ class TestActivitiesAPI(unittest.TestCase):
     def test_search(self) -> None:
         response = self.api.search()
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, dict)

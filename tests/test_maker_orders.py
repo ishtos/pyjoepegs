@@ -26,11 +26,12 @@ class TestActivitiesAPI(unittest.TestCase):
     def test_list_maker_orders(self) -> None:
         response = self.api.list_maker_orders()
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, list)
+        self.assertIsInstance(response[0], dict)
 
     @unittest.skip("TODO: check order_id")
     def test_get_maker_order(self) -> None:
         order_id = ""
         response = self.api.get_maker_order(order_id)
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, dict)

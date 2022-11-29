@@ -27,11 +27,13 @@ class TestActivitiesAPI(unittest.TestCase):
         collection_address = "0xb842344669579ecf4cee12f740520376c4cbc6d1"
         response = self.api.list_activity_by_collection(collection_address)
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, list)
+        self.assertIsInstance(response[0], dict)
 
     def test_list_activity_by_item(self) -> None:
         collection_address = "0xb842344669579ecf4cee12f740520376c4cbc6d1"
         token_id = "0"
         response = self.api.list_activity_by_item(collection_address, token_id)
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, list)
+        self.assertIsInstance(response[0], dict)

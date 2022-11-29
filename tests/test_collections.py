@@ -26,32 +26,35 @@ class TestActivitiesAPI(unittest.TestCase):
     def test_list_collections(self) -> None:
         response = self.api.list_collections()
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, list)
+        self.assertIsInstance(response[0], dict)
 
     def test_get_trending_collections(self) -> None:
         response = self.api.get_trending_collections()
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, list)
+        self.assertIsInstance(response[0], dict)
 
     @unittest.skip("TODO: check slug")
     def test_get_collection_by_slug(self) -> None:
         slug = ""
         response = self.api.get_collection_by_slug(slug)
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, list)
+        self.assertIsInstance(response[0], dict)
 
     def test_get_collection(self) -> None:
         address = "0xb842344669579ecf4cee12f740520376c4cbc6d1"
         response = self.api.get_collection(address)
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, dict)
 
     def test_get_item(self) -> None:
         collection_address = "0xb842344669579ecf4cee12f740520376c4cbc6d1"
         token_id = "0"
         response = self.api.get_item(collection_address, token_id)
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, dict)
 
     @unittest.skip("TODO: check trait_type")
     def test_get_collection_attribute_values(self) -> None:
@@ -59,10 +62,12 @@ class TestActivitiesAPI(unittest.TestCase):
         trait_type = ""
         response = self.api.get_collection_attribute_values(collection_address, trait_type)
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, list)
+        self.assertIsInstance(response[0], dict)
 
     def test_get_collection_attributes(self) -> None:
         collection_address = "0xb842344669579ecf4cee12f740520376c4cbc6d1"
         response = self.api.get_collection_attributes(collection_address)
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, list)
+        self.assertIsInstance(response[0], dict)

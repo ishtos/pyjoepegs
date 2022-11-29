@@ -7,6 +7,6 @@
 @License :   (C)Copyright 2022 ishtos
 """
 
-from .pyjoepegs import API
+from .pyjoepegs import JoepegsAPI
 
-__all__ = ["API"]
+__all__ = ["JoepegsAPI"]

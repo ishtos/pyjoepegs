@@ -17,7 +17,7 @@ from pyjoepegs.collections import CollectionsAPI
 from pyjoepegs.items import ItemsAPI
 from pyjoepegs.maker_orders import MakerOrdersAPI
 from pyjoepegs.owners import OwnersAPI
-from pyjoepegs.pyjoepegs import API
+from pyjoepegs.pyjoepegs import JoepegsAPI
 from pyjoepegs.sales import SalesAPI
 from pyjoepegs.search import SearchAPI
 from pyjoepegs.users import UsersAPI
@@ -29,7 +29,7 @@ class TestAPI(unittest.TestCase):
         dotenv.load_dotenv(dotenv_path=dotenv_path)
         api_key = os.environ.get("API_KEY")
 
-        self.api = API(api_key=api_key)
+        self.api = JoepegsAPI(api_key=api_key)
 
     def test_activities(self) -> None:
         self.assertIsInstance(self.api.activities(), ActivitiesAPI)

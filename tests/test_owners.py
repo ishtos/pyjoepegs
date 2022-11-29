@@ -27,10 +27,12 @@ class TestActivitiesAPI(unittest.TestCase):
     def test_list_owners(self) -> None:
         response = self.api.list_owners()
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, list)
+        self.assertIsInstance(response[0], dict)
 
     def test_list_collection_owners(self) -> None:
         collection_id = "0xb842344669579ecf4cee12f740520376c4cbc6d1"
         response = self.api.list_collection_owners(collection_id)
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, list)
+        self.assertIsInstance(response[0], dict)

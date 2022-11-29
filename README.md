@@ -11,8 +11,8 @@ pip install pyjoepegs
 ## Quick start
 
 ```python
-from pyjoepegs import API
-api = API(api_key=<API_KEY>)
+from pyjoepegs import JoepegsAPI
+api = JoepegsAPI(api_key=<API_KEY>)
 
 actvities_client = api.activities()
 collections_client = api.collections()

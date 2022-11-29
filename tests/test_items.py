@@ -26,4 +26,5 @@ class TestActivitiesAPI(unittest.TestCase):
     def test_list_items(self) -> None:
         response = self.api.list_items()
 
-        self.assertEqual(response["status_code"], 200)
+        self.assertIsInstance(response, list)
+        self.assertIsInstance(response[0], dict)
